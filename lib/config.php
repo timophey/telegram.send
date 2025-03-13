@@ -72,7 +72,8 @@ class Config
      */
     public static function getUser()
     {
-        return unserialize(Option::get(self::$module_id, 'user'));
+        $arResult = unserialize(Option::get(self::$module_id, 'user'));
+        return $arResult ? $arResult : [];
     }
 
     /**
@@ -202,7 +203,8 @@ class Config
      */
     public static function getMail()
     {
-        return unserialize(Option::get(self::$module_id, 'mail'));
+        $arResult = unserialize(Option::get(self::$module_id, 'mail'));
+        return $arResult ? $arResult : [];
     }
 
     /**
